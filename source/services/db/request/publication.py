@@ -1,32 +1,29 @@
 from datetime import datetime
 
-from source.services.db.request.base_builder import (
-    BaseUrlBuilder,
-    RequestData,
-)
+from source.services.db.request.base_builder import BaseRequestBuilder
 
 
-class PublicationRequestBuilder(BaseUrlBuilder):
+class PublicationRequestBuilder(BaseRequestBuilder):
     def __init__(self) -> None:
         super().__init__()
         self.base_url = "http://localhost:8000"
     
-    async def get_publication_active(self) -> RequestData:
-        self.type_request = "GET"
+    def get_publication_active(self) -> "PublicationRequestBuilder":
+        self.method = "GET"
         self.path = "/publications"
-        return self.dump()
+        return self
 
-    async def get_publication_for_chat(self, chat_id: int) -> RequestData:
-        self.type_request = "GET"
+    def get_publication_for_chat(self, chat_id: int) -> "PublicationRequestBuilder":
+        self.method = "GET"
         self.path = f"/publications/{chat_id}"
-        return self.dump()
+        return self
 
-    async def get_publication(self, publication_id: int) -> RequestData:
-        self.type_request = "GET"
+    def get_publication(self, publication_id: int) -> "PublicationRequestBuilder":
+        self.method = "GET"
         self.path = f"/publications/{publication_id}"
-        return self.dump()
+        return self
 
-    async def create_publication(
+    def create_publication(
         self,
         template_id: int,
         publish: datetime,
@@ -34,8 +31,8 @@ class PublicationRequestBuilder(BaseUrlBuilder):
         chat_id: int,
         pin: bool | None = None,
         delete: bool | None = None
-    ) -> RequestData:
-        self.type_request = "POST"
+    ) -> "PublicationRequestBuilder":
+        self.method = "POST"
         self.path = "/publications"
         self.data = {
             "template_id": template_id,
@@ -50,9 +47,9 @@ class PublicationRequestBuilder(BaseUrlBuilder):
             "pinned": False,
             "archived": False,
         }
-        return self.dump()
+        return self
 
-    async def delete_publication(self, publication_id: int) -> RequestData:
-        self.type_request = "DELETE"
+    def delete_publication(self, publication_id: int) -> "PublicationRequestBuilder":
+        self.method = "DELETE"
         self.path = f"/publications/{publication_id}"
-        return self.dump()
+        return self
