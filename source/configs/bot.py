@@ -9,4 +9,4 @@ class BotConfig(BaseConfig):
     )
 
     TOKEN: str
-    OWNER_IDS: list[int]
+    OWNERS: list[int]
