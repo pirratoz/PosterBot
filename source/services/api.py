@@ -1,3 +1,5 @@
+from asyncio import sleep
+
 from aiohttp import ClientSession
 from aiohttp.client import ClientResponse
 
@@ -16,3 +18,4 @@ class ServiceApiSession:
     async def close_session(self):
         if self.session is not None and not self.session.closed:
             await self.session.close()
+            await sleep(0.250)
