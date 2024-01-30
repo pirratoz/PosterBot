@@ -31,7 +31,7 @@ async def accept_moder_status(
         )
     )
 
-    if response_request.status == 200:
+    if response_request.status == 201:
         text_for_owner = text
         await bot.send_message(user_id_requesting_moderator, text, parse_mode="html")
     elif response_request.status == 409:
