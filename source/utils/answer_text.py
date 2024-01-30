@@ -14,4 +14,14 @@ class AnswerText:
     )
 
     moder_already_created = "Пользователь и так модератор!"
+    
+    moder_list_element = "<code>{id}</code>  |  {username}  |  {fullname}"
+    moder_list_title = "Список Модераторов: \n"
+    demote_moder_title = "Кого из модераторов понижаем?"
+    moder_demoted = "Модератор понижен"
+    moder_not_found = "Модератор не найден"
+
+    main_menu = "Главное меню"
+    moder_menu = "Действия с модераторами"
+
     something_went_wrong = "Что-то пошло не так"

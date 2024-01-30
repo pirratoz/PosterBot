@@ -10,4 +10,6 @@ class CallbackButton:
 
     # WITHOUT 
     # DESCRIPTION
+    demote_moder_list = "demote_moder_list"
     show_moders = "show_moders"
+    moder_kb = "moder_kb"
