@@ -24,4 +24,7 @@ class AnswerText:
     main_menu = "Главное меню"
     moder_menu = "Действия с модераторами"
 
+    chat_created = "Чат добавлен в список"
+    chat_removed = "Чат удалён из списка"
+
     something_went_wrong = "Что-то пошло не так"
