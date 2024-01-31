@@ -19,7 +19,7 @@ class ModerRequestBuilder(BaseRequestBuilder):
     def create_moder(self, user_id: int, fullname: str, username: str) -> "ModerRequestBuilder":
         self.method = "POST"
         self.path = "/moders"
-        self.data = {
+        self.json = {
             "id": user_id,
             "fullname": fullname,
             "username": username,

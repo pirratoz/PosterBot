@@ -19,7 +19,7 @@ class ChatRequestBuilder(BaseRequestBuilder):
     def create_chat(self, chat_id: int, title: str) -> "ChatRequestBuilder":
         self.method = "POST"
         self.path = "/chats"
-        self.data = {
+        self.json = {
             "id": chat_id,
             "title": title,
         }

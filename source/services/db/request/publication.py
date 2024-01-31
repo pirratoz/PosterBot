@@ -34,7 +34,7 @@ class PublicationRequestBuilder(BaseRequestBuilder):
     ) -> "PublicationRequestBuilder":
         self.method = "POST"
         self.path = "/publications"
-        self.data = {
+        self.json = {
             "template_id": template_id,
             "publish": publish,
             "finish": finish,

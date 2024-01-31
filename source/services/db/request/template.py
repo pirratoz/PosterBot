@@ -28,7 +28,7 @@ class TemplateRequestBuilder(BaseRequestBuilder):
         keyboard: list[list[dict[str, Any]]] | None = None
     ) -> "TemplateRequestBuilder":
         self.method = "POST"
-        self.data = {
+        self.json = {
             "title": title,
             "from_chat_id": from_chat_id,
             "media": {
