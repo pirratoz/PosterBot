@@ -1,6 +1,2 @@
-async def show_moderators_for_demote() -> None:
-    ...
-
-
 async def demote_status_moderator() -> None:
     ...

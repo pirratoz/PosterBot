@@ -4,14 +4,12 @@ __all__ = [
 
 from aiogram import Router
 
+from posterbot.routers.moder.show_moderators_for_demote import show_moderators_for_demote
+from posterbot.routers.moder.demote_moderator import demote_status_moderator
 from posterbot.routers.moder.request_status import request_status_moderator
 from posterbot.routers.moder.accept_status import accept_status_moderator
 from posterbot.routers.moder.reject_status import reject_status_moderator
 from posterbot.routers.moder.show_moderators import show_moderators
-from posterbot.routers.moder.demote_moderator import (
-    show_moderators_for_demote,
-    demote_status_moderator,
-)
 
 from posterbot.utils.filters import ModeratorFilter
 
