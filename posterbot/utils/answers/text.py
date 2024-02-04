@@ -17,9 +17,14 @@ class TextModerator:
     NEW_REQUEST_FOR_MODERATOR_STATUS = "Статус модератора запрашивает:\n" \
                                        "fullname: {fullname}\n" \
                                        "username: @{username}"
+    USER_ALREADY_MODERATOR = "Пользователь уже имеет статус модератора"
+    STATUS_REQUEST_REJECTED = "Запрос на повышение отклонён"
+    STATUS_UPGRADED = "Статус повышен"
+    STATUS_DOWNGRADED = "Статус понижен"
 
 
 class TextModeratorRegexp:
+    @staticmethod
     def get_name(text: str) -> Name:
         return Name(
             fullname=search("(?<=fullname: )[\S ]+", text)[0],
