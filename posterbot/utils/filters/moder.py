@@ -32,13 +32,13 @@ class ModeratorFilter:
 
     def SHOW_MODERATORS() -> list[MagicFilter]:
         return [
-            (F.data.startswith(ModeratorCallbackData.SHOW_MODERATORS)) &
+            (F.data == ModeratorCallbackData.SHOW_MODERATORS) &
             (F.from_user.id.in_(BotConfig().OWNERS))
         ]
 
     def SHOW_MODERATORS_FOR_DEMOTE() -> list[MagicFilter]:
         return [
-            (F.data.startswith(ModeratorCallbackData.SHOW_MODERATORS_FOR_DEMOTE)) &
+            (F.data == ModeratorCallbackData.SHOW_MODERATORS_FOR_DEMOTE) &
             (F.from_user.id.in_(BotConfig().OWNERS)) 
         ]
 
