@@ -7,11 +7,15 @@ from aiogram import (
 
 from posterbot.configs import BotConfig
 from posterbot.services import ServiceApiSession
-from posterbot.routers import router_moder
+from posterbot.routers import (
+    router_menu,
+    router_moder,
+)
 
 
 def include_routers(dp: Dispatcher) -> None:
     dp.include_routers(
+        router_menu,
         router_moder,
     )
 
