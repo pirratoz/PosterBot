@@ -27,7 +27,7 @@ class ModeratorCallbackRegexp:
             if callback_data.startswith(pattern_id):
                 break
         return User(
-            id=search(f"(?<={pattern_id}_)\d+", callback_data)
+            id=int(search(f"(?<={pattern_id}_)\d+", callback_data)[0])
         )
 
 
