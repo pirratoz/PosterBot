@@ -1,6 +1,7 @@
 from aiogram.types import CallbackQuery
 
 from posterbot.services.db.response import ModerManyResponse
+from posterbot.routers.menu.menu_main import send_menu_main
 from posterbot.utils.answers import (
     TextModerator,
     TextAnswer,
@@ -37,4 +38,4 @@ async def show_moderators(
     text = get_moders_text(moders) if moders else TextAnswer.OOPS
     
     await callback.message.answer(text)
-    await callback.message.delete()
+    await send_menu_main(callback)

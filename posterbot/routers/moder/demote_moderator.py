@@ -1,6 +1,7 @@
 from aiogram.types import CallbackQuery
 
 from posterbot.utils.commands import ModeratorCallbackRegexp
+from posterbot.routers.menu.menu_main import send_menu_main
 from posterbot.utils.answers import (
     TextModerator,
     TextAnswer,
@@ -41,4 +42,4 @@ async def demote_status_moderator(
     else:
         await callback.message.answer(TextModerator.USER_IS_NOT_MODERATOR)
 
-    await callback.message.delete()
+    await send_menu_main(callback)
