@@ -3,4 +3,8 @@ class ModeratorButtonText:
     ACCEPT_STATUS_MODERATOR = "Принять"
     REJECT_STATUS_MODERATOR = "Отклонить"
     SHOW_MODERATORS = "Показать модераторов"
-    DEMOTE_MODERATOR = "{fullname}"
+
+
+class MenuButtonText:
+    MAIN_MENU = "Меню главное"
+    MODERATOR_MENU = "Меню модераторов"

@@ -3,6 +3,7 @@ __all__ = [
     "ModeratorButtonText",
     "TextModerator",
     "TextAnswer",
+    "MenuButtonText",
 ]
 
 from posterbot.utils.answers.text import (
@@ -11,5 +12,6 @@ from posterbot.utils.answers.text import (
     TextAnswer,
 )
 from posterbot.utils.answers.button import (
-    ModeratorButtonText
+    ModeratorButtonText,
+    MenuButtonText,
 )
