@@ -12,10 +12,6 @@ from posterbot.services import (
 )
 
 
-def is_owner(user_id: int, owners: list[int]) -> bool:
-    return user_id in owners
-
-
 async def is_moder(user_id: int, api: ServiceApiSession) -> bool:
     request_data = await api.send(ModerRequestBuilder().get_moder(user_id))
     return request_data.status == 200
@@ -46,9 +42,6 @@ async def request_status_moderator(
     api: ServiceApiSession,
     bot: Bot
 ) -> None:
-    
-    if is_owner(message.from_user.id, config.OWNERS):
-        return None
     
     if await is_moder(message.from_user.id, api):
         return None
