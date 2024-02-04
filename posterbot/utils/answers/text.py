@@ -18,9 +18,12 @@ class TextModerator:
                                        "fullname: {fullname}\n" \
                                        "username: @{username}"
     USER_ALREADY_MODERATOR = "Пользователь уже имеет статус модератора"
+    USER_IS_NOT_MODERATOR = "Пользователь не имеет статуса модератора"
     STATUS_REQUEST_REJECTED = "Запрос на повышение отклонён"
     STATUS_UPGRADED = "Статус повышен"
     STATUS_DOWNGRADED = "Статус понижен"
+    WHO_TO_DEMOTE = "Кого понижать"    
+    MODERATOR_LIST = "Список модераторов:\n"
 
 
 class TextModeratorRegexp:
