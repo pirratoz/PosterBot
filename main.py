@@ -5,30 +5,20 @@ from aiogram import (
     Bot,
 )
 
-from source.configs import BotConfig
-from source.services import ServiceApiSession
-
-from source.routers import (
-    router_start,
-    router_moder,
-)
+from posterbot.configs import BotConfig
+from posterbot.services import ServiceApiSession
+from posterbot.routers import router_moder
 
 
 def include_routers(dp: Dispatcher) -> None:
     dp.include_routers(
-        router_start,
         router_moder,
     )
-
-
-async def moke(*args, **kwargs):
-    print(args[0].dump())
 
 
 async def main() -> None:   
     config = BotConfig()
     api = ServiceApiSession()
-    # api.send = moke
 
     bot = Bot(token=config.TOKEN)
     dp = Dispatcher()
