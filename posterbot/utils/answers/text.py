@@ -33,3 +33,8 @@ class TextModeratorRegexp:
             fullname=search("(?<=fullname: )[\S ]+", text)[0],
             username=search("(?<=username: )[\S ]+", text)[0]
         )
+
+
+class TextTemplate:
+    AWAIT_TITLE_TEMPLATE = "Введите название для шаблона"
+    TITLE_SETTED = "Название шаблона установлено: {title}"
