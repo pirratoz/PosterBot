@@ -9,3 +9,11 @@ class MenuButtonText:
     MAIN_MENU = "Меню главное"
     MODERATOR_MENU = "Меню модераторов"
     TEMPLATE_MENU = "Меню шаблонов"
+
+
+class TemplateButtonText:
+    SET_TITLE = "Установить заголовок"
+    FILL_TEMPLATE = "Заполнить шаблон"
+    CLEAR_TEMPLATE = "Очистить шаблон"
+    CREATE_TEMPLATE = "Создать"
+    SHOW_TEMPLATE = "Посмотреть"
