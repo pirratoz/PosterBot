@@ -9,7 +9,7 @@ from posterbot.utils.answers.button import (
 )
 from posterbot.utils.commands.callbacks import (
     ModeratorCallbackData,
-    MenuMainCallbackData,
+    MenuCallbackData,
 )
 
 
@@ -24,7 +24,7 @@ def kb_moderator_menu() -> InlineKeyboardMarkup:
     )
     btn_return_to_main_menu = InlineKeyboardButton(
         text=MenuButtonText.MAIN_MENU,
-        callback_data=MenuMainCallbackData.SHOW_MENU
+        callback_data=MenuCallbackData.MAIN_MENU
     )
     return InlineKeyboardMarkup(
         inline_keyboard=[

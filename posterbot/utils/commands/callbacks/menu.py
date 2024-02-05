@@ -1,6 +1,4 @@
-class MenuMainCallbackData:
-    SHOW_MENU = "menu_main"
-
-
-class MenuModeratorCallbackData:
-    SHOW_MENU = "menu_moderator"
+class MenuCallbackData:
+    MAIN_MENU = "menu_main"
+    MODERATOR_MENU = "menu_moderator"
+    TEMPLATE_MENU = "menu_template"

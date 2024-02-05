@@ -8,3 +8,4 @@ class ModeratorButtonText:
 class MenuButtonText:
     MAIN_MENU = "Меню главное"
     MODERATOR_MENU = "Меню модераторов"
+    TEMPLATE_MENU = "Меню шаблонов"
