@@ -5,6 +5,7 @@ __all__ = [
 from aiogram import Router
 
 from posterbot.routers.template.set_title import (set_title_fsm, set_title)
+from posterbot.routers.template.clear_template import clear_template
 
 from posterbot.utils.filters import TemplateFilter
 
@@ -20,4 +21,9 @@ router_template.callback_query.register(
 router_template.message.register(
     set_title,
     *TemplateFilter.SET_TITLE_TEMPLATE()
+)
+
+router_template.callback_query.register(
+    clear_template,
+    *TemplateFilter.CLEAR_TEMPLATE()
 )

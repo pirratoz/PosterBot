@@ -16,3 +16,8 @@ class TemplateFilter:
         return [
             TemplateStates.set_title
         ]
+    
+    def CLEAR_TEMPLATE() -> list[MagicFilter]:
+        return [
+            (F.data == TemplateCallbackData.CLEAR_TEMPLATE)
+        ]
