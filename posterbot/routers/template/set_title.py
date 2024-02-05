@@ -26,7 +26,10 @@ async def set_title(
 ) -> None:
     
     if not message.text:
-        return
+        await message.answer(
+            TextTemplate.TITLE_TEMPLATE_NOT_BE_NONE
+        )
+        return None
     
     storage = TemplateAction(storage_tmp, message.from_user.id)
     storage.set_title(message.text)

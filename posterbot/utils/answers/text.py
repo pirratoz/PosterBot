@@ -37,4 +37,5 @@ class TextModeratorRegexp:
 
 class TextTemplate:
     AWAIT_TITLE_TEMPLATE = "Введите название для шаблона"
+    TITLE_TEMPLATE_NOT_BE_NONE = "Название шаблона должно состоять из символов"
     TITLE_SETTED = "Название шаблона установлено: {title}"
