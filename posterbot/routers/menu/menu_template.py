@@ -19,15 +19,12 @@ async def send_menu_template(
     api: ServiceApiSession,
     config: BotConfig
 ) -> None:
-
-    if callback.message.from_user.id not in config.OWNERS:
-        return None
     
-    if not await is_moder(callback.message.from_user.id, api):
-        return None
+    user_id = callback.message.chat.id
 
-    await callback.message.delete()
-    await callback.message.answer(
-        text=MenuButtonText.TEMPLATE_MENU,
-        reply_markup=kb_template_menu()
-    )
+    if user_id in config.OWNERS or await is_moder(user_id, api):
+        await callback.message.delete()
+        await callback.message.answer(
+            text=MenuButtonText.TEMPLATE_MENU,
+            reply_markup=kb_template_menu()
+        )
