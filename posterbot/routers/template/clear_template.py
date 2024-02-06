@@ -9,7 +9,10 @@ async def clear_template(
     storage_tmp: TemplateStorage
 ) -> None:
 
-    storage_tmp.clear(callback.message.chat.id)
+    text = TextTemplate.TEMPLATE_IS_EMPTY
+    if storage_tmp.clear(callback.message.chat.id):
+        text = TextTemplate.TEMPLATE_CLEARED
+    
+    await callback.message.answer(text)
 
-    await callback.message.answer(TextTemplate.TEMPLATE_CLEARED)
     await callback.answer()
