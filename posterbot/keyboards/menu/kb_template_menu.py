@@ -24,7 +24,7 @@ def kb_template_menu() -> InlineKeyboardMarkup:
     )
     btn_fill_tmp = InlineKeyboardButton(
         text=TemplateButtonText.FILL_TEMPLATE,
-        callback_data=TemplateCallbackData.FILL_TEMPLATE
+        callback_data=TemplateCallbackData.FILL_TEMPLATE_START
     )
     btn_show_tmp = InlineKeyboardButton(
         text=TemplateButtonText.SHOW_TEMPLATE,
