@@ -40,3 +40,12 @@ class TextTemplate:
     TITLE_TEMPLATE_NOT_BE_NONE = "Название шаблона должно состоять из символов"
     TITLE_SETTED = "Название шаблона установлено: {title}"
     TEMPLATE_CLEARED = "Шаблон очищен"
+    TEMPLATE_IS_EMPTY = "Шаблон пуст"
+    TEMPLATE_FILL_MODE_ENABLED = "Включен режим заполнения шаблона"
+    TEMPLATE_FILL_MODE_DISABLED = "Выключен режим заполнения шаблона"
+
+    TEXT_UPDATED = "Текст обновлён"
+    VIDEO_APPEND = "Видео добавлено"
+    PHOTO_APPEND = "Фото добавлено"
+    VIDEO_REMOVED = "Видео удалено"
+    PHOTO_REMOVED = "Фото удалено"

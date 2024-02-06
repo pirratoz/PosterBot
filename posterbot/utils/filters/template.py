@@ -7,7 +7,7 @@ from posterbot.states import TemplateStates
 
 class TemplateFilter:
     
-    def SET_TITLE_TEMPLATE_FSM() -> list[MagicFilter]:
+    def FSM_SET_TITLE_START() -> list[MagicFilter]:
         return [
             (F.data == TemplateCallbackData.SET_TITLE)
         ]
@@ -20,4 +20,32 @@ class TemplateFilter:
     def CLEAR_TEMPLATE() -> list[MagicFilter]:
         return [
             (F.data == TemplateCallbackData.CLEAR_TEMPLATE)
+        ]
+
+    def FSM_FILL_TEMPLATE_START() -> list[MagicFilter]:
+        return [
+            (F.data == TemplateCallbackData.FILL_TEMPLATE_START)
+        ]
+
+    def FSM_FILL_TEMPLATE_END() -> list[MagicFilter]:
+        return [
+            (F.data == TemplateCallbackData.FILL_TEMPLATE_END)
+        ]
+
+    def FILL_TEMPLATE() -> list[MagicFilter]:
+        return [
+            (F.video) |
+            (F.photo) |
+            (F.text) |
+            (F.caption)
+        ]
+
+    def REMOVE_MEDIA() -> list[MagicFilter]:
+        return [
+            (F.data.startswith(TemplateCallbackData.REMOVE_MEDIA))
+        ]
+
+    def SHOW_TEMPLATE() -> list[MagicFilter]:
+        return [
+            (F.data == TemplateCallbackData.SHOW_TEMPLATE)
         ]
