@@ -1,3 +1,4 @@
+from typing import Any
 from uuid import uuid4
 
 from posterbot.models import (
@@ -12,29 +13,28 @@ class TemplateStorage:
 
     def get_by_id(self, user_id: int) -> Template:
         template = self.storage.get(user_id)
-        if template:
-            return template
-        return Template(
-            title="",
-            text="",
-            media=[],
-            entities=[],
-            keyboard=[]
-        )
+        if template is None:
+            template = Template(
+                title="",
+                text="",
+                media=[],
+                entities=[],
+                keyboard=[]
+            )
+            self.storage[user_id] = template
+        return template
 
-    def clear(self, user_id: int) -> None:
-        if not self.storage.get(user_id):
-            return None
+    def clear(self, user_id: int) -> bool:
         try:
             del self.storage[user_id]
         except KeyError:
-            ...
+            return False
+        return True
 
 
 class TemplateAction:
     def __init__(self, storage: TemplateStorage, user_id: int) -> None:
         self.template = storage.get_by_id(user_id)
-        self.user_id: int
 
     def set_title(self, title: str) -> None:
         self.template["title"] = title
@@ -42,14 +42,17 @@ class TemplateAction:
     def set_text(self, text: str) -> None:
         self.template["text"] = text
     
+    def set_entities(self, entities: list[dict[str, Any]]) -> None:
+        self.template["entities"] = entities
+    
     def append_media(self, media: Media) -> str:
         media["uuid"] = str(uuid4())
         self.template["media"].append(media)
         return media["uuid"]
     
-    def remove_media(self, uuid: str) -> bool:
+    def remove_media(self, uuid: str) -> tuple[bool, Media | None]:
         for media in self.template["media"]:
             if media["uuid"] == uuid:
                 self.template["media"].remove(media)
-                return True
-        return False
+                return (True, media)
+        return (False, None)
