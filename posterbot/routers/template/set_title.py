@@ -1,22 +1,12 @@
 from aiogram.fsm.context import FSMContext
-from aiogram.types import (
-    CallbackQuery,
-    Message,
-)
+from aiogram.types import Message
 
 from posterbot.keyboards.menu import kb_template_menu
 from posterbot.utils.answers import TextTemplate
-from posterbot.states import TemplateStates
 from posterbot.storages import (
     TemplateStorage,
     TemplateAction,
 )
-
-
-async def set_title_fsm(callback: CallbackQuery, state: FSMContext) -> None:
-    await callback.message.answer(TextTemplate.AWAIT_TITLE_TEMPLATE)
-    await state.set_state(TemplateStates.set_title)
-    await callback.delete()
 
 
 async def set_title(
@@ -24,13 +14,13 @@ async def set_title(
     state: FSMContext,
     storage_tmp: TemplateStorage
 ) -> None:
-    
+
     if not message.text:
         await message.answer(
             TextTemplate.TITLE_TEMPLATE_NOT_BE_NONE
         )
         return None
-    
+
     storage = TemplateAction(storage_tmp, message.from_user.id)
     storage.set_title(message.text)
 
