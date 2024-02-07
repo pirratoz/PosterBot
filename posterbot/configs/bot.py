@@ -1,6 +1,6 @@
 from pydantic_settings import SettingsConfigDict
 
-from source.configs.base_config import BaseConfig
+from posterbot.configs.base_config import BaseConfig
 
 
 class BotConfig(BaseConfig):
