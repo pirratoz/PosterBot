@@ -14,29 +14,26 @@ from posterbot.storages import (
 
 @dataclass
 class MediaInfo:
+    message_id: int
     file_id: str
     type: str
     text: str
 
     def dump(self) -> Media:
-        return Media(file_id=self.file_id, type=self.type)
+        return Media(message_id=self.message_id, file_id=self.file_id, type=self.type)
 
 
 def find_media(message: Message) -> MediaInfo:
-    media = MediaInfo("", "", "")
+    media = MediaInfo(message.message_id, "", "", "")
 
     if message.photo:
-        media = MediaInfo(
-            file_id=message.photo[-1].file_id,
-            type=InputMediaType.PHOTO.value,
-            text=TextTemplate.PHOTO_APPEND
-        )
+        media.file_id = message.photo[-1].file_id
+        media.type = InputMediaType.PHOTO.value
+        media.text = TextTemplate.PHOTO_APPEND
     elif message.video:
-        media = MediaInfo(
-            file_id=message.video.file_id,
-            type=InputMediaType.VIDEO.value,
-            text=TextTemplate.VIDEO_APPEND
-        )
+        media.file_id = message.video.file_id
+        media.type = InputMediaType.VIDEO.value
+        media.text = TextTemplate.VIDEO_APPEND
     
     return media
 

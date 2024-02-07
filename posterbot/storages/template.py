@@ -36,6 +36,9 @@ class TemplateStorage:
 class TemplateAction:
     def __init__(self, storage: TemplateStorage, user_id: int) -> None:
         self.template = storage.get_by_id(user_id)
+    
+    def get_media(self) -> list[Media]:
+        return sorted(self.template["media"], key=lambda v: v["message_id"])
 
     def set_title(self, title: str) -> None:
         self.template["title"] = title

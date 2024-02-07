@@ -5,6 +5,7 @@ from typing import (
 
 
 class Media(TypedDict):
+    message_id: int
     file_id: str
     type: str
     uuid: str

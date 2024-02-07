@@ -20,7 +20,7 @@ async def show_template(
     )
 
     is_first_attachments = True
-    for media in storage.template["media"]:
+    for media in storage.get_media():
         album_builder.add(
             type=media["type"],
             media=media["file_id"],
@@ -32,7 +32,7 @@ async def show_template(
         await callback.message.answer_media_group(
             media=album_builder.build()
         )
-    else:
+    elif storage.template["text"]:
         await callback.message.answer(
             text=storage.template["text"],
             entities=storage.template["entities"]
