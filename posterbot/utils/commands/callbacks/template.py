@@ -15,6 +15,7 @@ class TemplateCallbackData:
     CREATE_TEMPLATE = "tmp_crt"
     SHOW_TEMPLATE = "tmp_show"
     REMOVE_MEDIA = "tmp_rm_media"
+    REMOVE_MEDIA_LIST = "tmp_rm_media_l"
 
 
 class TemplateCallbackRegexp:

@@ -15,6 +15,7 @@ class TemplateStorage:
         template = self.storage.get(user_id)
         if template is None:
             template = Template(
+                id=None,
                 title="",
                 text="",
                 media=[],

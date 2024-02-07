@@ -16,6 +16,7 @@ class Button(TypedDict):
 
 
 class Template(TypedDict):
+    id: None | int
     title: str
     text: str
     media: list[Media]
