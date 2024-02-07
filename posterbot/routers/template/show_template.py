@@ -1,8 +1,6 @@
 from aiogram.utils.media_group import MediaGroupBuilder
 from aiogram.types import CallbackQuery
 
-from posterbot.utils.commands import TemplateCallbackRegexp
-from posterbot.utils.answers import TextTemplate
 from posterbot.storages import (
     TemplateStorage,
     TemplateAction,
