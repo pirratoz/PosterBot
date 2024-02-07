@@ -52,6 +52,11 @@ router_template.message.register(
 )
 
 router_template.callback_query.register(
+    remove_any_media,
+    *TemplateFilter.REMOVE_MEDIA_LIST()
+)
+
+router_template.callback_query.register(
     remove_media,
     *TemplateFilter.REMOVE_MEDIA()
 )
@@ -59,9 +64,4 @@ router_template.callback_query.register(
 router_template.callback_query.register(
     show_template,
     *TemplateFilter.SHOW_TEMPLATE()
-)
-
-router_template.callback_query.register(
-    remove_any_media,
-    *TemplateFilter.REMOVE_MEDIA_LIST()
 )
