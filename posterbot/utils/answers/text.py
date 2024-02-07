@@ -41,6 +41,7 @@ class TextTemplate:
     TITLE_SETTED = "Название шаблона установлено: {title}"
     TEMPLATE_CLEARED = "Шаблон очищен"
     TEMPLATE_IS_EMPTY = "Шаблон пуст"
+    MEDIA_IS_EMPTY = "Список медиа пуст"
     TEMPLATE_FILL_MODE_ENABLED = "Включен режим заполнения шаблона"
     TEMPLATE_FILL_MODE_DISABLED = "Выключен режим заполнения шаблона"
 
@@ -49,3 +50,7 @@ class TextTemplate:
     PHOTO_APPEND = "Фото добавлено"
     VIDEO_REMOVED = "Видео удалено"
     PHOTO_REMOVED = "Фото удалено"
+
+    START_LIST_MEDIA = "[НАЧАЛО СПИСКА МЕДИА]"
+    REMOVE_MEDIA = "[режим удаления медиа]"
+    END_LIST_MEDIA = "[КОНЕЦ СПИСКА МЕДИА]"

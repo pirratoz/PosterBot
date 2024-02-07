@@ -8,6 +8,7 @@ from posterbot.routers.template.fsm_fill_template_start import fsm_fill_template
 from posterbot.routers.template.fsm_fill_template_end import fsm_fill_template_end
 from posterbot.routers.template.fsm_set_title_start import fsm_set_title_start
 from posterbot.routers.template.create_template import create_template
+from posterbot.routers.template.remove_any_media import remove_any_media
 from posterbot.routers.template.clear_template import clear_template
 from posterbot.routers.template.show_template import show_template
 from posterbot.routers.template.fill_template import fill_template
@@ -58,4 +59,9 @@ router_template.callback_query.register(
 router_template.callback_query.register(
     show_template,
     *TemplateFilter.SHOW_TEMPLATE()
+)
+
+router_template.callback_query.register(
+    remove_any_media,
+    *TemplateFilter.REMOVE_MEDIA_LIST()
 )
