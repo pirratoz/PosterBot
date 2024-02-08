@@ -5,6 +5,8 @@ __all__ = [
     "ChatResponse",
     "PublicationManyResponse",
     "PublicationResponse",
+    "TemplateManyResponse",
+    "TemplateResponse",
 ]
 
 from posterbot.services.db.response.chat import (
@@ -18,4 +20,8 @@ from posterbot.services.db.response.moder import (
 from posterbot.services.db.response.publication import (
     PublicationManyResponse,
     PublicationResponse,
+)
+from posterbot.services.db.response.template import (
+    TemplateManyResponse,
+    TemplateResponse,
 )
