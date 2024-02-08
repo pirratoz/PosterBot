@@ -42,13 +42,18 @@ def kb_template_menu() -> InlineKeyboardMarkup:
         text=TemplateButtonText.REMOVE_MEDIA,
         callback_data=TemplateCallbackData.REMOVE_MEDIA_LIST
     )
+    btn_select_template = InlineKeyboardButton(
+        text=TemplateButtonText.SELECT_TEMPLATE,
+        callback_data=TemplateCallbackData.SELECT_TEMPLATE
+    )
     return InlineKeyboardMarkup(
         inline_keyboard=[
-            [btn_clear_tmp],
             [btn_set_title],
             [btn_fill_tmp],
             [btn_remove_any_media],
             [btn_show_tmp, btn_create_tmp],
+            [btn_select_template],
+            [btn_clear_tmp],
             [btn_return_to_main_menu]
         ]
     )
