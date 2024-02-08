@@ -65,3 +65,8 @@ router_template.callback_query.register(
     show_template,
     *TemplateFilter.SHOW_TEMPLATE()
 )
+
+router_template.callback_query.register(
+    create_template,
+    *TemplateFilter.CREATE_TEMPLATE()
+)

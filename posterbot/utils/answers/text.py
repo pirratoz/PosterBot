@@ -45,6 +45,11 @@ class TextTemplate:
     TEMPLATE_FILL_MODE_ENABLED = "Включен режим заполнения шаблона"
     TEMPLATE_FILL_MODE_DISABLED = "Выключен режим заполнения шаблона"
 
+    TEMPLATE_CANNOT_BE_EMPTY = "Шаблон не может быть пуст"
+    TEMPLATE_TITLE_CANNOT_BE_EMPTY = "Установите название шаблону"
+    TEMPLATE_CREATED = "Шаблон успешно создан!"
+    TEMPLATE_UPDATED = "Шаблон успешно обновлён!"
+
     TEXT_UPDATED = "Текст обновлён"
     VIDEO_APPEND = "Видео добавлено"
     PHOTO_APPEND = "Фото добавлено"

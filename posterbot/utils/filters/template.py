@@ -54,3 +54,8 @@ class TemplateFilter:
         return [
             (F.data == TemplateCallbackData.REMOVE_MEDIA_LIST)
         ]
+
+    def CREATE_TEMPLATE() -> list[MagicFilter]:
+        return [
+            (F.data == TemplateCallbackData.CREATE_TEMPLATE)
+        ]

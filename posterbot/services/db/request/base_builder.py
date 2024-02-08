@@ -1,12 +1,16 @@
 from typing import (
     TypedDict,
+    TypeVar,
     Literal,
     Any,
 )
 
 
+T_method = TypeVar("T_method", bound=Literal["GET", "POST", "DELETE", "PUT"])
+
+
 class RequestData(TypedDict):
-    method: Literal["GET", "POST", "DELETE"]
+    method: T_method
     params: dict[str, Any] | None
     json: dict[str, Any] | None
     url: str
@@ -14,7 +18,7 @@ class RequestData(TypedDict):
 
 class BaseRequestBuilder:
     def __init__(self) -> None:
-        self.method: Literal["GET", "POST", "DELETE"] = "GET"
+        self.method: T_method = "GET"
         self.params: dict[str, Any] | None = None
         self.json: dict[str, Any] | None = None
         self.base_url: str = ""
