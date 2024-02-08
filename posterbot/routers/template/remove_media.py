@@ -16,9 +16,9 @@ async def remove_media(
     
     storage = TemplateAction(storage_tmp, callback.message.chat.id)
 
-    uuid = TemplateCallbackRegexp.get_media_info(callback.data).uuid
+    media_message_id = TemplateCallbackRegexp.get_media_info(callback.data).message_id
 
-    result, media = storage.remove_media(uuid)
+    result, media = storage.remove_media(media_message_id)
 
     text_mapper = {
         InputMediaType.PHOTO.value: TextTemplate.PHOTO_REMOVED,

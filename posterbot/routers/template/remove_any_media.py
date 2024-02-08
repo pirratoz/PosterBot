@@ -27,7 +27,7 @@ async def remove_any_media(
         await callback.message.answer_photo(
             photo=media["file_id"],
             caption=TextTemplate.REMOVE_MEDIA,
-            reply_markup=kb_remove_any_media_template(media["uuid"])
+            reply_markup=kb_remove_any_media_template(media["message_id"])
         )
     
     await callback.message.answer(TextTemplate.END_LIST_MEDIA)

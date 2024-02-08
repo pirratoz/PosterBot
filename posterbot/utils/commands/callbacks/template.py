@@ -4,7 +4,7 @@ from re import search
 
 @dataclass
 class MediaInfo:
-    uuid: str
+    message_id: int
 
 
 class TemplateCallbackData:
@@ -23,11 +23,11 @@ class TemplateCallbackRegexp:
     def get_media_info(callback_data: str) -> MediaInfo:
         pattern = TemplateCallbackData.REMOVE_MEDIA
         return MediaInfo(
-            uuid=search(f"(?<={pattern}_)[0-9a-z-]+", callback_data)[0]
+            uuid=int(search(f"(?<={pattern}_)[0-9a-z-]+", callback_data)[0])
         )
 
 
 class TemplateCallbackBuilder:
     @staticmethod
-    def remove_media(media_uuid: str) -> str:
-        return f"{TemplateCallbackData.REMOVE_MEDIA}_{media_uuid}"
+    def remove_media(media_message_id: str) -> str:
+        return f"{TemplateCallbackData.REMOVE_MEDIA}_{media_message_id}"

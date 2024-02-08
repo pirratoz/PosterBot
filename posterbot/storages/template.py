@@ -49,14 +49,13 @@ class TemplateAction:
     def set_entities(self, entities: list[dict[str, Any]]) -> None:
         self.template["entities"] = entities
     
-    def append_media(self, media: Media) -> str:
-        media["uuid"] = str(uuid4())
+    def append_media(self, media: Media) -> int:
         self.template["media"].append(media)
-        return media["uuid"]
-    
-    def remove_media(self, uuid: str) -> tuple[bool, Media | None]:
+        return media["message_id"]
+
+    def remove_media(self, media_message_id: str) -> tuple[bool, Media | None]:
         for media in self.template["media"]:
-            if media["uuid"] == uuid:
-                self.template["media"].remove(media)
+            if media["message_id"] == media_message_id:
+                self.template["message_id"].remove(media)
                 return (True, media)
         return (False, None)
