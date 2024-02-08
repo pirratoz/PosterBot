@@ -50,6 +50,8 @@ class TextTemplate:
     TEMPLATE_CREATED = "Шаблон успешно создан!"
     TEMPLATE_UPDATED = "Шаблон успешно обновлён!"
     TEMPLATE_DOWNLOADED = "Шаблон успешно загружен"
+    SELECT_TEMPLATE = "Выберите шаблон"
+    TEMPLATES_IS_EMPTY = "Список шаблонов пуст!"
 
     TEXT_UPDATED = "Текст обновлён"
     VIDEO_APPEND = "Видео добавлено"
