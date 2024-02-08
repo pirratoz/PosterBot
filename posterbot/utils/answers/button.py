@@ -18,5 +18,7 @@ class TemplateButtonText:
     CREATE_TEMPLATE = "Создать"
     SHOW_TEMPLATE = "Посмотреть"
 
+    DOWNLOAD_TEMPLATE = "Загрузить шаблон"
+
     REMOVE_MEDIA = "Удалить медиа"
     STOP_FILL_TEMPLATE = "Закончить заполнение"

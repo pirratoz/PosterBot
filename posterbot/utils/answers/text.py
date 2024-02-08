@@ -49,6 +49,7 @@ class TextTemplate:
     TEMPLATE_TITLE_CANNOT_BE_EMPTY = "Установите название шаблону"
     TEMPLATE_CREATED = "Шаблон успешно создан!"
     TEMPLATE_UPDATED = "Шаблон успешно обновлён!"
+    TEMPLATE_DOWNLOADED = "Шаблон успешно загружен"
 
     TEXT_UPDATED = "Текст обновлён"
     VIDEO_APPEND = "Видео добавлено"
