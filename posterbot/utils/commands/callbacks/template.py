@@ -21,7 +21,7 @@ class TemplateCallbackData:
     SHOW_TEMPLATE = "tmp_show"
     REMOVE_MEDIA = "tmp_rm_media"
     REMOVE_MEDIA_LIST = "tmp_rm_media_l"
-    DOWNLOAD_TEMPLATE = "tmp_download"
+    SELECT_TEMPLATE = "tmp_select"
     DOWNLOAD_TEMPLATE_BY_ID = "tmp_download_by_id"
 
 
@@ -45,3 +45,7 @@ class TemplateCallbackBuilder:
     @staticmethod
     def remove_media(media_message_id: str) -> str:
         return f"{TemplateCallbackData.REMOVE_MEDIA}_{media_message_id}"
+
+    @staticmethod
+    def download_template(template_id: int) -> str:
+        return f"{TemplateCallbackData.DOWNLOAD_TEMPLATE_BY_ID}_{template_id}"
