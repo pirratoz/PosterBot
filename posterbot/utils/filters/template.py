@@ -59,3 +59,13 @@ class TemplateFilter:
         return [
             (F.data == TemplateCallbackData.CREATE_TEMPLATE)
         ]
+    
+    def SELECT_TEMPLATE() -> list[MagicFilter]:
+        return [
+            (F.data == TemplateCallbackData.SELECT_TEMPLATE)
+        ]
+
+    def DOWNLOAD_TEMPLATE() -> list[MagicFilter]:
+        return [
+            (F.data.startswith(TemplateCallbackData.DOWNLOAD_TEMPLATE_BY_ID))
+        ]
