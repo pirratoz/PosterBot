@@ -8,7 +8,7 @@ from posterbot.utils.commands import TemplateCallbackBuilder
 
 
 def kb_select_template(templates: TemplateManyResponse) -> InlineKeyboardMarkup:
-    STEP = 2
+    STEP = 3
     btns = [
         InlineKeyboardButton(
             text=template.title,
@@ -18,9 +18,7 @@ def kb_select_template(templates: TemplateManyResponse) -> InlineKeyboardMarkup:
     ]
     return InlineKeyboardMarkup(
         inline_keyboard=[
-            [
-                btns[i:i+STEP]
-            ]
+            btns[i:i+STEP]
             for i in range(0, len(templates.templates), STEP)
         ]
     )
