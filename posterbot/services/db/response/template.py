@@ -20,13 +20,17 @@ class Button(BaseModel):
     url: str
 
 
+class Attachments(BaseModel):
+    entities: T_entities | None = []
+    media: list[Media] | None = []
+    keyboard: list[list[Button]] | None = []
+
+
 class TemplateResponse(BaseModel):
     id: int
     title: str
     text: str
-    entities: T_entities
-    media: list[Media]
-    keyboard: list[list[Button]]
+    attachments: Attachments
 
 
 class TemplateManyResponse(BaseModel):

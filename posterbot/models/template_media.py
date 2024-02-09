@@ -24,19 +24,25 @@ class Template(TypedDict):
     keyboard: list[list[Button]]
 
 
-class TemplateCreate(TypedDict):
-    title: str
-    text: str
+class Attachments(TypedDict):
     media: list[Media]
     entities: list[dict[str, Any]]
     keyboard: list[list[Button]]
+
+
+class TemplateCreate(TypedDict):
+    title: str
+    text: str
+    attachments: Attachments
 
 
 def convert_to_template_create(template: Template) -> TemplateCreate:
     return TemplateCreate(
         title=template["title"],
         text=template["text"],
-        media=template["media"],
-        entities=template["entities"],
-        keyboard=template["keyboard"]
+        attachments=Attachments(
+            media=template["media"] or None,
+            entities=template["entities"] or None,
+            keyboard=template["keyboard"] or None
+        )
     )

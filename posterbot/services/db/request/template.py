@@ -21,6 +21,7 @@ class TemplateRequestBuilder(BaseRequestBuilder):
 
     def create_template(self, template: Template) -> "TemplateRequestBuilder":
         self.method = "POST"
+        self.path = "/templates"
         self.json = convert_to_template_create(template)
         return self
 
@@ -33,3 +34,4 @@ class TemplateRequestBuilder(BaseRequestBuilder):
         self.method = "PUT"
         self.path = f"/templates/{template_id}"
         self.json = convert_to_template_create(template)
+        return self
