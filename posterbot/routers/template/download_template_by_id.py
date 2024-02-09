@@ -39,8 +39,9 @@ async def download_template_by_id(
     storage.template["id"] = template.id
     storage.set_title(template.title)
     storage.set_text(template.text)
-    storage.set_entities(template.entities)
-    storage.template["keyboard"] = template.keyboard
+    storage.set_entities(template.attachments.entities)
+    storage.template["media"] = [template.model_dump() for template in template.attachments.media]
+    storage.template["keyboard"] = template.attachments.keyboard
 
     await callback.message.delete()
     await callback.message.answer(
