@@ -1,6 +1,8 @@
 from aiogram.utils.media_group import MediaGroupBuilder
 from aiogram.types import CallbackQuery
 
+from posterbot.utils.answers import MenuButtonText
+from posterbot.keyboards.menu import kb_template_menu
 from posterbot.storages import (
     TemplateStorage,
     TemplateAction,
@@ -38,4 +40,8 @@ async def show_template(
             entities=storage.template["entities"]
         )
 
-    await callback.answer()
+    await callback.message.delete()
+    await callback.message.answer(
+        text=MenuButtonText.TEMPLATE_MENU,
+        reply_markup=kb_template_menu()
+    )
