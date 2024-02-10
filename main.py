@@ -12,6 +12,7 @@ from posterbot.routers import (
     router_menu,
     router_moder,
     router_template,
+    router_publication,
 )
 
 
@@ -20,6 +21,7 @@ def include_routers(dp: Dispatcher) -> None:
         router_menu,
         router_moder,
         router_template,
+        router_publication,
     )
 
 

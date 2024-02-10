@@ -68,3 +68,7 @@ class TextTemplate:
     START_LIST_MEDIA = "[НАЧАЛО СПИСКА МЕДИА]"
     REMOVE_MEDIA = "[режим удаления медиа]"
     END_LIST_MEDIA = "[КОНЕЦ СПИСКА МЕДИА]"
+
+
+class TextPublication:
+    ...

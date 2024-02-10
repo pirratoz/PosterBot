@@ -25,3 +25,7 @@ class TemplateButtonText:
 
     REMOVE_MEDIA = "Удалить медиа"
     STOP_FILL_TEMPLATE = "Закончить заполнение"
+
+
+class PublicationButtonText:
+    ...

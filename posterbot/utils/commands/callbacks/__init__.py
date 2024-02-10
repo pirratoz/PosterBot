@@ -5,7 +5,10 @@ __all__ = [
     "TemplateCallbackData",
     "MenuCallbackData",
     "TemplateCallbackBuilder",
-    "TemplateCallbackRegexp"
+    "TemplateCallbackRegexp",
+    "PublicationCallbackBuilder",
+    "PublicationCallbackRegexp",
+    "PublicationCallbackData",
 ]
 
 from posterbot.utils.commands.callbacks.template import (
@@ -17,5 +20,10 @@ from posterbot.utils.commands.callbacks.moderator import (
     ModeratorCallbackBuilder,
     ModeratorCallbackRegexp,
     ModeratorCallbackData,
+)
+from posterbot.utils.commands.callbacks.publication import (
+    PublicationCallbackBuilder,
+    PublicationCallbackRegexp,
+    PublicationCallbackData,
 )
 from posterbot.utils.commands.callbacks.menu import MenuCallbackData

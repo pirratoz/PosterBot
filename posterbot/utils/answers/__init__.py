@@ -6,6 +6,8 @@ __all__ = [
     "MenuButtonText",
     "TemplateButtonText",
     "TextTemplate",
+    "PublicationButtonText",
+    "TextPublication",
 ]
 
 from posterbot.utils.answers.text import (
@@ -13,9 +15,11 @@ from posterbot.utils.answers.text import (
     TextModerator,
     TextAnswer,
     TextTemplate,
+    TextPublication,
 )
 from posterbot.utils.answers.button import (
     ModeratorButtonText,
     MenuButtonText,
     TemplateButtonText,
+    PublicationButtonText,
 )
