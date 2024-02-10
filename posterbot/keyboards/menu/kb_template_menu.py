@@ -46,6 +46,10 @@ def kb_template_menu() -> InlineKeyboardMarkup:
         text=TemplateButtonText.SELECT_TEMPLATE,
         callback_data=TemplateCallbackData.SELECT_TEMPLATE
     )
+    btn_delete_template = InlineKeyboardButton(
+        text=TemplateButtonText.DELETE_TEMPLATE,
+        callback_data=TemplateCallbackData.DELTE_TEMPLATE
+    )
     return InlineKeyboardMarkup(
         inline_keyboard=[
             [btn_set_title],
@@ -54,6 +58,7 @@ def kb_template_menu() -> InlineKeyboardMarkup:
             [btn_show_tmp, btn_create_tmp],
             [btn_select_template],
             [btn_clear_tmp],
+            [btn_delete_template],
             [btn_return_to_main_menu]
         ]
     )
