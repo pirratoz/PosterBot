@@ -69,3 +69,13 @@ class TemplateFilter:
         return [
             (F.data.startswith(TemplateCallbackData.DOWNLOAD_TEMPLATE_BY_ID))
         ]
+
+    def DELETE_TEMPLATE() -> list[MagicFilter]:
+        return [
+            (F.data == TemplateCallbackData.DELTE_TEMPLATE)
+        ]
+    
+    def CONFIRM_DELETE_TEMPLATE() -> list[MagicFilter]:
+        return [
+            (F.data.startswith(TemplateCallbackData.CONFIRM_DELTE_TEMPLATE))
+        ]

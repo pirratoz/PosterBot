@@ -59,6 +59,12 @@ class TextTemplate:
     VIDEO_REMOVED = "Видео удалено"
     PHOTO_REMOVED = "Фото удалено"
 
+    TEMPLATE_NOT_FOUND_IN_DATABASE = "Шаблон не найден в базе данных"
+    TEMPLATE_ALREADY_USED_IN_PUBLICATION = "Шаблон уже используется в публикации!!\nПри удалении все публикации будут сняты!!!"
+    CONFIRM_TEMPLATE_DELETE = "Подтвердите удаление шаблона"
+    TEMPLATE_DELETED_WITH_N_PUBLICATIONS = "Шаблон удалён с {count_publication} публикациями"
+    TEMPLATE_DELETED = "Шаблон удалён"
+
     START_LIST_MEDIA = "[НАЧАЛО СПИСКА МЕДИА]"
     REMOVE_MEDIA = "[режим удаления медиа]"
     END_LIST_MEDIA = "[КОНЕЦ СПИСКА МЕДИА]"

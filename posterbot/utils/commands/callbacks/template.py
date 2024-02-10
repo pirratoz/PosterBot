@@ -23,6 +23,8 @@ class TemplateCallbackData:
     REMOVE_MEDIA_LIST = "tmp_rm_media_l"
     SELECT_TEMPLATE = "tmp_select"
     DOWNLOAD_TEMPLATE_BY_ID = "tmp_download_by_id"
+    DELTE_TEMPLATE = "tmp_del"
+    CONFIRM_DELTE_TEMPLATE = "tmp_del_c"
 
 
 class TemplateCallbackRegexp:
@@ -35,7 +37,13 @@ class TemplateCallbackRegexp:
 
     @staticmethod
     def get_template_info(callback_data: str) -> TemplateInfo:
-        pattern = TemplateCallbackData.DOWNLOAD_TEMPLATE_BY_ID
+        patterns = [
+            TemplateCallbackData.DOWNLOAD_TEMPLATE_BY_ID,
+            TemplateCallbackData.CONFIRM_DELTE_TEMPLATE,
+        ]
+        for pattern in patterns:
+            if callback_data.startswith(pattern):
+                break
         return TemplateInfo(
             template_id=int(search(f"(?<={pattern}_)[0-9a-z-]+", callback_data)[0])
         )
@@ -49,3 +57,7 @@ class TemplateCallbackBuilder:
     @staticmethod
     def download_template(template_id: int) -> str:
         return f"{TemplateCallbackData.DOWNLOAD_TEMPLATE_BY_ID}_{template_id}"
+    
+    @staticmethod
+    def confirm_delete(template_id: int) -> str:
+        return f"{TemplateCallbackData.CONFIRM_DELTE_TEMPLATE}_{template_id}"

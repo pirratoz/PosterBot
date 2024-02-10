@@ -18,6 +18,9 @@ class TemplateButtonText:
     CREATE_TEMPLATE = "Создать/Обновить"
     SHOW_TEMPLATE = "Посмотреть"
 
+    DELETE_TEMPLATE = "Удалить Шаблон"
+    CONFIRM_DELETE_TEMPLATE = "Подтвердить удаление"
+
     SELECT_TEMPLATE = "Загрузить шаблон"
 
     REMOVE_MEDIA = "Удалить медиа"
