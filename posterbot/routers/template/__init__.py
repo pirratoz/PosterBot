@@ -5,12 +5,14 @@ __all__ = [
 from aiogram import Router
 
 from posterbot.routers.template.fsm_fill_template_start import fsm_fill_template_start
+from posterbot.routers.template.confirm_delete_template import confirm_delete_template
+from posterbot.routers.template.download_template_by_id import download_template_by_id
 from posterbot.routers.template.fsm_fill_template_end import fsm_fill_template_end
 from posterbot.routers.template.fsm_set_title_start import fsm_set_title_start
-from posterbot.routers.template.download_template_by_id import download_template_by_id
+from posterbot.routers.template.remove_any_media import remove_any_media
 from posterbot.routers.template.select_template import select_template
 from posterbot.routers.template.create_template import create_template
-from posterbot.routers.template.remove_any_media import remove_any_media
+from posterbot.routers.template.delete_template import delete_template
 from posterbot.routers.template.clear_template import clear_template
 from posterbot.routers.template.show_template import show_template
 from posterbot.routers.template.fill_template import fill_template
@@ -81,4 +83,14 @@ router_template.callback_query.register(
 router_template.callback_query.register(
     download_template_by_id,
     *TemplateFilter.DOWNLOAD_TEMPLATE()
+)
+
+router_template.callback_query.register(
+    delete_template,
+    *TemplateFilter.DELETE_TEMPLATE()
+)
+
+router_template.callback_query.register(
+    confirm_delete_template,
+    *TemplateFilter.CONFIRM_DELETE_TEMPLATE()
 )
