@@ -7,7 +7,10 @@ from aiogram import (
 
 from posterbot.configs import BotConfig
 from posterbot.services import ServiceApiSession
-from posterbot.storages import TemplateStorage
+from posterbot.storages import (
+    PublicationStorage,
+    TemplateStorage,
+)
 from posterbot.routers import (
     router_menu,
     router_chat,
@@ -31,6 +34,7 @@ async def main() -> None:
     config = BotConfig()
     api = ServiceApiSession()
     storage_tmp = TemplateStorage()
+    storage_pub = PublicationStorage()
 
     bot = Bot(token=config.TOKEN)
     dp = Dispatcher()
@@ -41,7 +45,8 @@ async def main() -> None:
         bot,
         api=api,
         config=config,
-        storage_tmp=storage_tmp
+        storage_tmp=storage_tmp,
+        storage_pub=storage_pub
     )
 
     await api.close_session()
