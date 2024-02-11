@@ -4,4 +4,4 @@ __all__ = [
 
 from aiogram import Router
 
-router_publication = Router("publication")
+router_publication = Router(name="publication")
