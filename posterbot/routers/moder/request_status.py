@@ -4,17 +4,10 @@ from aiogram.types import Message
 from aiogram import Bot
 
 from posterbot.keyboards.dialogue import kb_request_status_moderator
+from posterbot.utils.functions import get_role
 from posterbot.utils.answers import TextModerator
 from posterbot.configs import BotConfig
-from posterbot.services import (
-    ModerRequestBuilder,
-    ServiceApiSession,
-)
-
-
-async def is_moder(user_id: int, api: ServiceApiSession) -> bool:
-    request_data = await api.send(ModerRequestBuilder().get_moder(user_id))
-    return request_data.status == 200
+from posterbot.services import ServiceApiSession
 
 
 async def send_request(
@@ -43,7 +36,9 @@ async def request_status_moderator(
     bot: Bot
 ) -> None:
     
-    if await is_moder(message.from_user.id, api):
+    role = await get_role(message.from_user.id, api)
+    
+    if role.owner_or_moder:
         return None
 
     await send_request(message, config, bot)

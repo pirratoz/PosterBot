@@ -1,6 +1,7 @@
 from aiogram.types import CallbackQuery
 from aiogram import Bot
 
+from posterbot.utils.functions import get_role
 from posterbot.utils.commands import ModeratorCallbackRegexp
 from posterbot.utils.answers import (
     TextModeratorRegexp,
@@ -11,11 +12,6 @@ from posterbot.services import (
     ModerRequestBuilder,
     ServiceApiSession,
 )
-
-
-async def is_moder(user_id: int, api: ServiceApiSession) -> bool:
-    request_data = await api.send(ModerRequestBuilder().get_moder(user_id))
-    return request_data.status == 200
 
 
 async def create_moder(callback: CallbackQuery, api: ServiceApiSession) -> int:
@@ -53,8 +49,10 @@ async def accept_status_moderator(
 ) -> None:
     
     user_id = ModeratorCallbackRegexp.get_user(callback.data).id
+
+    role = await get_role(user_id, api)
     
-    if await is_moder(user_id, api):
+    if role.is_moder:
         await callback.message.answer(TextModerator.USER_ALREADY_MODERATOR)
     else:
         status_code = await create_moder(callback, api)
