@@ -72,3 +72,8 @@ class TextTemplate:
 
 class TextPublication:
     ...
+
+
+class TextChat:
+    CHAT_APPEND = "Чат добавлен"
+    CHAT_REMOVED = "Чат убран"

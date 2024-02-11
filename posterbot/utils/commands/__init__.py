@@ -7,6 +7,7 @@ __all__ = [
     "ModeratorCallbackData",
     "ModeratorTextCommand",
     "MenuTextCommand",
+    "ChatTextCommand",
     "MenuCallbackData",
     "PublicationCallbackBuilder",
     "PublicationCallbackRegexp",
@@ -28,4 +29,5 @@ from posterbot.utils.commands.callbacks import (
 from posterbot.utils.commands.text import (
     ModeratorTextCommand,
     MenuTextCommand,
+    ChatTextCommand,
 )
