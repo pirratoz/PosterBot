@@ -34,10 +34,7 @@ class TemplateFilter:
 
     def FILL_TEMPLATE() -> list[MagicFilter]:
         return [
-            (F.video) |
-            (F.photo) |
-            (F.text) |
-            (F.caption)
+            TemplateStates.fill_tmp
         ]
 
     def REMOVE_MEDIA() -> list[MagicFilter]:

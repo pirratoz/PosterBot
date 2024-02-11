@@ -10,6 +10,7 @@ from posterbot.services import ServiceApiSession
 from posterbot.storages import TemplateStorage
 from posterbot.routers import (
     router_menu,
+    router_chat,
     router_moder,
     router_template,
     router_publication,
@@ -19,6 +20,7 @@ from posterbot.routers import (
 def include_routers(dp: Dispatcher) -> None:
     dp.include_routers(
         router_menu,
+        router_chat,
         router_moder,
         router_template,
         router_publication,

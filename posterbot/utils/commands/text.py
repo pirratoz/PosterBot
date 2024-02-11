@@ -7,4 +7,4 @@ class MenuTextCommand:
 
 
 class ChatTextCommand:
-    APPEND_OR_REMOVE_CHAT = "/chatads"
+    APPEND_OR_REMOVE_CHAT = {"/chatads"}
