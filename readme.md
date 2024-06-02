@@ -1,3 +1,6 @@
+# Attention
+Some functionality has not yet been implemented.
+
 # Aiogram Poster Bot
 
 This bot is an assistant for placing advertising messages.
